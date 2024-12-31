@@ -1,0 +1,51 @@
+[package]
+name = "moss-rust"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+path = "src/lib.rs"
+crate-type = ["lib","cdylib", "staticlib"]
+
+[dependencies]
+flutter_rust_bridge = "1"
+lazy_static = "1.4.0"
+futures-util = { version = "0.3.17", default-features = false, features = [
+    "std",
+] }
+openssl = { version = "0.10.32", features = ["vendored"] }
+log = "0.4.0"
+env_logger = "0.10"
+parking_lot = "0.12"
+rand = "0.8.5"
+rcgen = { version = "0.10.0", features = ["pem", "x509-parser"] }
+rsa = "0.8.2"
+ring = "0.16.20"
+pem = "2.0.0"
+chrono = "0.4.19"
+time = { version = "0.3.20", features = ["std"] }
+x509-parser = "0.15.0"
+anyhow = { version = "1.0", default-features = false }
+
+# [web-server-dependencies]
+actix-web = { version = "4", features = ["rustls"] }
+actix-cors = "0.6.4"
+tokio = { version = "1.24.2", features = ["full"] }
+tokio-stream = { version = "0.1.3", features = ["sync"] }
+reqwest = { version = "0.11", features = ["stream"] }
+url = "2.2"
+flate2 ="1.0"
+regex = "1.8.1"
+urlencoding = "2.1.2"
+# log = "0.4.17"
+rustls = "0.20.2"
+rustls-pemfile = "1"
+hudsucker = { version = "0.19.2", features = ["full"] }
+http = { version = "0.2.9" }
+#webpki-roots = "0.23.0"
+regex-syntax = "0.7.2"
+[[example]]
+name = "web_server"
+crate-type = ["bin"]
